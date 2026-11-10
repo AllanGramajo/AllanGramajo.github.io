@@ -1,0 +1,269 @@
+{
+  "schema": "chest-radar-public-library/1",
+  "records": [
+    {
+      "name": "231026_userI_tripod_01_5.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/231026_userI_tripod_01_5.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "5d0b99db619d12510662dfc27fdeda5fa5ef563a",
+      "sha256": "4354ad3d277679a5d6943edd157eb8618bfa77327859b6caddd5e281c7a7ade5",
+      "bytes": 7914811,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:39.546134+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    },
+    {
+      "name": "231026_userI_tripod_01_2.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/231026_userI_tripod_01_2.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "dd61207a64456c294e43b76c69237ccf0d0fe52c",
+      "sha256": "a64b796644780c2b65dcd1fd9fa5160dc6f6f11e5dccd5cd6afc56826c83bd27",
+      "bytes": 7907743,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:39.781153+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    },
+    {
+      "name": "231012_userK_tripod_01_4.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/231012_userK_tripod_01_4.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "4a01ddb44a9dd2cafc3ed512cdd1dd534a2d0bf3",
+      "sha256": "45a60db99cbbe7aa99a289850b5d54c4f42c680c2350521cb101c597b05c06ad",
+      "bytes": 7962882,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:40.019569+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    },
+    {
+      "name": "231026_userG_tripod_01_7.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/231026_userG_tripod_01_7.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "eb3e2ebee1c569802eb36af38f0afb8b3130d3a9",
+      "sha256": "6d8bc94c208f4cfd93371323e620f32a5436bcb65f9e2a296ae74487ad9a268b",
+      "bytes": 7928552,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:40.261541+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    },
+    {
+      "name": "231026_userJ_tripod_03_5.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/231026_userJ_tripod_03_5.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "4513758e75741d483db5c255f88fb1e8c2ff32e5",
+      "sha256": "521348761fa8fa686c514b01026f3d060b346b8ecf20c244acad732643634d2d",
+      "bytes": 7930753,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:40.481254+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    },
+    {
+      "name": "231116_userJ_tripod_01_5.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/231116_userJ_tripod_01_5.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "6ffb276ffcc1e9ea4602473dac936936ae2406ca",
+      "sha256": "3b9b7ad8fedfb2ca27ed61c884b89a731db8e20371b440286b0712eaf7659d6f",
+      "bytes": 7921276,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:40.703538+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    },
+    {
+      "name": "231130_userJ_tripod_02_3.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/231130_userJ_tripod_02_3.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "2dfad765f2a14f9cebd01d885436a98a2c6e6939",
+      "sha256": "16e797a07710b31ea0afe642bab5287da363e70797dbc7c74e89a439aff0930d",
+      "bytes": 7896901,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:40.934150+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    },
+    {
+      "name": "240205_userI_tripod_01_1.csv",
+      "kind": "github-build",
+      "url": "https://raw.githubusercontent.com/nesl/MobiVital-dataset/42572b4231be0d43a9be0690c30c48ca4427a65c/240205_userI_tripod_01_1.csv",
+      "repository": "https://github.com/nesl/MobiVital-dataset",
+      "commit": "42572b4231be0d43a9be0690c30c48ca4427a65c",
+      "git_blob_sha1": "a501fd7804b2bd6ec024f69987e5974f8b2498e9",
+      "sha256": "96783a369b5549c9453c3c4d433425e2df01c3d84125b94ca65984afad0fece3",
+      "bytes": 7942682,
+      "license": {
+        "id": "cc-by-4.0",
+        "name": "Creative Commons Attribution 4.0 International",
+        "url": "https://creativecommons.org/licenses/by/4.0/",
+        "evidence_url": "https://zenodo.org/api/records/15022885",
+        "dataset_title": "MobiVital: A Dataset for Contactless Respiration Monitoring Using UWB Radar",
+        "creators": [
+          "Wang, Ziqi",
+          "HUA, DEREK",
+          "Jiang, Wenjun",
+          "Xing, Tianwei",
+          "Chen, Xun",
+          "Srivastava, Mani"
+        ]
+      },
+      "attribution": "Wang, Ziqi; HUA, DEREK; Jiang, Wenjun; Xing, Tianwei; Chen, Xun; Srivastava, Mani",
+      "dataset_doi": "https://doi.org/10.5281/zenodo.15022885",
+      "retrieved_at_utc": "2026-11-10T19:29:41.155493+00:00",
+      "rows": 1500,
+      "columns": 254,
+      "sample_rate_hz": 50,
+      "raw_samples_modified": false,
+      "limitations": "Selected public segments. Recorded-data replay, not live acquisition or clinical validation."
+    }
+  ]
+}

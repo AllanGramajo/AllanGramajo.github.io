@@ -1,0 +1,144 @@
+{
+  "target": "file:///home/runner/work/AllanGramajo.github.io/AllanGramajo.github.io/Heart-and-Chest-radar/index.html",
+  "recordings": [
+    {
+      "name": "231026_userI_tripod_01_5.csv",
+      "sha256": "4354ad3d277679a5d6943edd157eb8618bfa77327859b6caddd5e281c7a7ade5",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "231026_userI_tripod_01_5.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 25,
+        "radarRR": 6.923076923076923,
+        "beltRR": 6.923076923076923,
+        "corr": 0.9486713880934523,
+        "points": 1300
+      }
+    },
+    {
+      "name": "231026_userI_tripod_01_2.csv",
+      "sha256": "a64b796644780c2b65dcd1fd9fa5160dc6f6f11e5dccd5cd6afc56826c83bd27",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "231026_userI_tripod_01_2.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 24,
+        "radarRR": 9.230769230769232,
+        "beltRR": 9.230769230769232,
+        "corr": 0.9375300310133248,
+        "points": 1300
+      }
+    },
+    {
+      "name": "231012_userK_tripod_01_4.csv",
+      "sha256": "45a60db99cbbe7aa99a289850b5d54c4f42c680c2350521cb101c597b05c06ad",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "231012_userK_tripod_01_4.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 27,
+        "radarRR": 18.461538461538463,
+        "beltRR": 18.461538461538463,
+        "corr": 0.9867540332319024,
+        "points": 1300
+      }
+    },
+    {
+      "name": "231026_userG_tripod_01_7.csv",
+      "sha256": "6d8bc94c208f4cfd93371323e620f32a5436bcb65f9e2a296ae74487ad9a268b",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "231026_userG_tripod_01_7.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 26,
+        "radarRR": 20.76923076923077,
+        "beltRR": 20.76923076923077,
+        "corr": 0.9308847077058123,
+        "points": 1300
+      }
+    },
+    {
+      "name": "231026_userJ_tripod_03_5.csv",
+      "sha256": "521348761fa8fa686c514b01026f3d060b346b8ecf20c244acad732643634d2d",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "231026_userJ_tripod_03_5.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 26,
+        "radarRR": 6.923076923076923,
+        "beltRR": 18.461538461538463,
+        "corr": 0.8169130822021345,
+        "points": 1300
+      }
+    },
+    {
+      "name": "231116_userJ_tripod_01_5.csv",
+      "sha256": "3b9b7ad8fedfb2ca27ed61c884b89a731db8e20371b440286b0712eaf7659d6f",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "231116_userJ_tripod_01_5.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 24,
+        "radarRR": 13.846153846153847,
+        "beltRR": 16.153846153846153,
+        "corr": 0.0392330876963335,
+        "points": 1300
+      }
+    },
+    {
+      "name": "231130_userJ_tripod_02_3.csv",
+      "sha256": "16e797a07710b31ea0afe642bab5287da363e70797dbc7c74e89a439aff0930d",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "231130_userJ_tripod_02_3.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 27,
+        "radarRR": 16.153846153846153,
+        "beltRR": 16.153846153846153,
+        "corr": 0.7873943767625771,
+        "points": 1300
+      }
+    },
+    {
+      "name": "240205_userI_tripod_01_1.csv",
+      "sha256": "96783a369b5549c9453c3c4d433425e2df01c3d84125b94ca65984afad0fece3",
+      "rows": 1500,
+      "columns": 254,
+      "browser_metrics": {
+        "name": "240205_userI_tripod_01_1.csv",
+        "n": 1500,
+        "fs": 50,
+        "bin": 26,
+        "radarRR": 6.923076923076923,
+        "beltRR": 6.923076923076923,
+        "corr": 0.8857025647622132,
+        "points": 1300
+      }
+    }
+  ],
+  "checks": [
+    "Eight source-verified CSVs; exact hashes, dimensions, finite samples and reuse attribution",
+    "Three executable scripts pass Node syntax checks; no external code or runtime data fetch",
+    "All eight selector choices load and produce finite radar/belt metrics from 1,500 samples",
+    "Manual/automatic bins, playback/pause, seek, 4x speed, restart and full trace work",
+    "Saved offline copy retains all eight choices and restores/switches data without network",
+    "Mobile-width page has no horizontal document overflow",
+    "No JavaScript errors or external application requests"
+  ],
+  "limitations": "Software and sample-identity tests, not clinical validation.",
+  "status": "PASS"
+}
