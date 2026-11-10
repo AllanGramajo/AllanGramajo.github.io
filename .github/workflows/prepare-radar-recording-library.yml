@@ -1,0 +1,55 @@
+name: Prepare verified radar recording library
+on:
+  push:
+    branches: [radar-recording-selector-fix]
+    paths: [.github/workflows/prepare-radar-recording-library.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare-library:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Read existing radar validation code
+        uses: actions/checkout@v6
+        with:
+          repository: HeartChest-Radar-Team/Heart-and-Chest-radar
+          ref: d83732f4ea7c3bde514b6e7becfcc1d00a98e68e
+          persist-credentials: false
+      - name: Download and verify eight official public recordings
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import hashlib, json
+          from pathlib import Path
+          from datetime import datetime, timezone
+          import build_site as b
+          commit = '42572b4231be0d43a9be0690c30c48ca4427a65c'
+          filenames = ['231026_userI_tripod_01_5.csv','231026_userI_tripod_01_2.csv','231012_userK_tripod_01_4.csv','231026_userG_tripod_01_7.csv','231026_userJ_tripod_03_5.csv','231116_userJ_tripod_01_5.csv','231130_userJ_tripod_02_3.csv','240205_userI_tripod_01_1.csv']
+          license_info, evidence = b.verify_reuse('15022885')
+          tree = b.get_json(f'https://api.github.com/repos/{b.REPOSITORY}/git/trees/{commit}')
+          entries = {e['path']: e for e in tree['tree']}
+          out = Path('verified-library'); out.mkdir()
+          records=[]
+          for name in filenames:
+              url=f'https://raw.githubusercontent.com/{b.REPOSITORY}/{commit}/{name}'
+              raw=b.get_bytes(url)
+              blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+              assert entries[name]['sha']==blob and entries[name]['size']==len(raw), name
+              b.validate_csv(raw)
+              source={'name':name,'kind':'github-build','url':url,'repository':'https://github.com/'+b.REPOSITORY,'commit':commit,'git_blob_sha1':blob,'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'license':license_info,'attribution':'; '.join(license_info['creators']),'dataset_doi':'https://doi.org/10.5281/zenodo.15022885','retrieved_at_utc':datetime.now(timezone.utc).isoformat(),'rows':1500,'columns':254,'sample_rate_hz':50,'raw_samples_modified':False,'limitations':'Selected public segments, not population-level or clinical validation. Playback is recorded data, not a live sensor.'}
+              (out/name).write_bytes(raw); records.append(source)
+              print('VERIFIED',name,len(raw),source['sha256'])
+          (out/'manifest.json').write_text(json.dumps({'records':records},indent=2))
+          (out/'license-evidence.json').write_text(json.dumps(evidence,indent=2))
+          print('Eight verified original CSV recordings prepared. No website has been modified or deployed.')
+          PY
+      - name: Save verified recordings for offline restoration
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-public-recordings-verified
+          path: verified-library
+          retention-days: 3
+          if-no-files-found: error
