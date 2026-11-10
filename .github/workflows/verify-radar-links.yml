@@ -1,0 +1,72 @@
+name: Verify radar website links
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - Heart-and-Chest-radar/index.html
+      - .github/workflows/verify-radar-links.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check-public-links:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Verify public site and legacy redirect without signing in
+        env:
+          PYTHONUNBUFFERED: '1'
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import hashlib
+          import os
+          import time
+          import urllib.error
+          import urllib.request
+
+          destination = 'https://heartchest-radar-team.github.io/Heart-and-Chest-radar/'
+          legacy = 'https://allangramajo.github.io/Heart-and-Chest-radar/'
+
+          def fetch_public(url):
+              last_error = None
+              # A commit can reach Actions before Pages finishes publishing it.
+              for attempt in range(18):
+                  try:
+                      req = urllib.request.Request(url, headers={'User-Agent': 'radar-link-check/1.0'})
+                      with urllib.request.urlopen(req, timeout=12) as response:
+                          status = response.status
+                          body = response.read(12 * 1024 * 1024)
+                          content_type = response.headers.get('Content-Type', '')
+                      if status != 200 or 'text/html' not in content_type:
+                          raise ValueError(f'Unexpected response: HTTP {status}, {content_type}')
+                      text = body.decode('utf-8')
+                      if '<html' not in text.lower() or '<title>page not found' in text.lower():
+                          raise ValueError('The response does not contain the expected HTML website')
+                      print(f'PASS: HTTP {status} {url}; {len(body):,} bytes; SHA-256 {hashlib.sha256(body).hexdigest()}')
+                      return text, len(body)
+                  except (urllib.error.URLError, TimeoutError, ValueError) as error:
+                      last_error = error
+                      print(f'Attempt {attempt + 1}: {url}: {error}')
+                      if attempt < 17:
+                          time.sleep(5)
+              raise RuntimeError(f'Public URL could not be verified: {url}: {last_error}')
+
+          site, size = fetch_public(destination)
+          assert size > 1000000, 'Expected the full website with its embedded recording'
+          assert '231026_userI_tripod_01_5.csv' in site, 'Expected public recording identity is missing'
+          old, _ = fetch_public(legacy)
+          assert destination in old, 'Legacy address does not point to the organization website'
+          assert 'window.location.replace' in old, 'Automatic legacy redirect is missing'
+          assert 'rel="canonical"' in old, 'Canonical organization address is missing'
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as summary:
+              summary.write('## Public radar website links verified\n\n')
+              summary.write(f'- Organization website: HTTP 200 — {destination}\n')
+              summary.write('- Published HTML contains the expected embedded recording identity.\n')
+              summary.write(f'- Old personal-account address: HTTP 200 — {legacy}\n')
+              summary.write('- The old page contains an automatic redirect and a fallback link to the organization website.\n')
+              summary.write('\nChecks used anonymous HTTP requests, not a signed-in GitHub browser. These checks do not validate physiological accuracy or execute browser JavaScript.\n')
+          PY
