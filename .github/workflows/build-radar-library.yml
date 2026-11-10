@@ -1,0 +1,66 @@
+name: Build restored radar recording library
+on:
+  push:
+    branches: [publish-radar-recording-library]
+    paths:
+      - _radar_build/**
+      - .github/workflows/build-radar-library.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: build-restored-radar-library
+  cancel-in-progress: false
+jobs:
+  build-and-test:
+    if: github.ref == 'refs/heads/publish-radar-recording-library'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out restoration branch
+        uses: actions/checkout@v6
+        with:
+          ref: publish-radar-recording-library
+      - name: Retrieve pinned original project source
+        run: |
+          git clone --quiet https://github.com/HeartChest-Radar-Team/Heart-and-Chest-radar.git _radar_build/upstream
+          git -C _radar_build/upstream checkout --detach d83732f4ea7c3bde514b6e7becfcc1d00a98e68e
+      - name: Build and validate original website
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          cd _radar_build/upstream
+          python3 assemble_site.py
+          python3 -m unittest discover -s tests -v
+          python3 build_site.py
+          python3 tests/check_built_site.py _site/index.html
+      - name: Restore eight original public recordings and interactive controls
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 _radar_build/restore.py _radar_build/upstream Heart-and-Chest-radar/index.html
+      - name: Prepare browser test environment
+        run: |
+          python3 -m pip install playwright==1.56.0
+          python3 -m playwright install --with-deps chromium
+      - name: Test all recordings, playback controls and offline saving
+        run: python3 _radar_build/check.py Heart-and-Chest-radar/index.html
+      - name: Commit only the tested generated radar files to the restoration branch
+        run: |
+          cp _radar_test_results/results.json Heart-and-Chest-radar/TEST-RESULTS.json
+          git add Heart-and-Chest-radar/index.html Heart-and-Chest-radar/data/manifest.json Heart-and-Chest-radar/data/license-evidence.json Heart-and-Chest-radar/ATTRIBUTION.md Heart-and-Chest-radar/TEST-RESULTS.json
+          git diff --cached --stat
+          if ! git diff --cached --quiet; then
+            git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Build verified eight-recording radar website; preserve portfolio homepage'
+            git push origin HEAD:publish-radar-recording-library
+          fi
+          echo '## Eight-recording radar release built and browser-tested' >> "$GITHUB_STEP_SUMMARY"
+          echo 'All original recordings are embedded. Review and merge this branch to publish the existing radar address. Portfolio homepage unchanged.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Preserve browser test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: radar-restoration-tests
+          path: |
+            _radar_test_results/results.json
+            _radar_test_results/recordings.png
+          retention-days: 7
